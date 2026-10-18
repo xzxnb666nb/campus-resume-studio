@@ -498,7 +498,9 @@ img {
 }
 
 .service-section {
-  background: #efeee9;
+  background: #f3f5f6;
+  padding-left: 34px;
+  padding-right: 34px;
 }
 
 .service-section,
@@ -918,6 +920,11 @@ img {
     grid-template-columns: 1fr;
   }
 
+  .service-section {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+
   .service-card {
     min-height: 0;
   }
@@ -1008,6 +1015,11 @@ img {
   .service-section,
   .process-section {
     padding: 56px 0;
+  }
+
+  .service-section {
+    padding-left: 16px;
+    padding-right: 16px;
   }
 
   .template-grid {
