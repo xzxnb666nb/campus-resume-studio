@@ -178,7 +178,7 @@ img {
 .template-open:focus-visible,
 .featured-preview:focus-visible,
 .modal-close:focus-visible {
-  outline: 3px solid rgba(37, 93, 75, 0.28);
+  outline: 3px solid rgba(83, 105, 123, 0.3);
   outline-offset: 4px;
 }
 
@@ -246,7 +246,7 @@ img {
 .kicker {
   margin: 0 0 16px;
   color: var(--accent);
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 0.1em;
 }
@@ -503,6 +503,11 @@ img {
   padding-right: 34px;
 }
 
+.process-section {
+  padding-left: 34px;
+  padding-right: 34px;
+}
+
 .service-section,
 .process-section {
   padding-top: 58px;
@@ -537,14 +542,14 @@ img {
 .service-card {
   position: relative;
   min-height: 190px;
-  padding: 18px 24px 16px 0;
+  padding: 18px 24px 16px 16px;
   border: 0;
   border-top: 1px solid #bbb8b0;
   background: transparent;
 }
 
 .service-card + .service-card {
-  padding-left: 24px;
+  padding-left: 16px;
   border-left: 1px solid #d1cec6;
 }
 
@@ -619,12 +624,12 @@ img {
 
 .process-grid li {
   min-height: 145px;
-  padding: 18px 22px 12px 0;
+  padding: 18px 22px 12px 16px;
   border-right: 1px solid var(--line);
 }
 
 .process-grid li:not(:first-child) {
-  padding-left: 22px;
+  padding-left: 16px;
 }
 
 .process-grid li:last-child {
@@ -637,7 +642,7 @@ img {
   justify-content: space-between;
   gap: 32px;
   margin: 0 0 54px;
-  padding: 30px 0;
+  padding: 30px 34px;
   border-top: 1px solid var(--ink);
   border-bottom: 1px solid var(--line);
   background: transparent;
@@ -647,7 +652,7 @@ img {
 .contact-band .kicker {
   margin-bottom: 6px;
   color: var(--accent);
-  font-size: 10px;
+  font-size: 14px;
 }
 
 .contact-band h2 {
@@ -667,13 +672,17 @@ img {
 
 .site-footer {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  padding: 18px 0 24px;
-  border-top: 1px solid var(--line);
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  margin: 0 0 48px;
+  padding: 14px 18px 16px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
   color: #8b8982;
-  font-size: 10.5px;
+  font-size: 11px;
+  line-height: 1.6;
 }
 
 .site-footer p {
@@ -803,6 +812,11 @@ img {
 .contact-modal {
   width: min(560px, calc(100vw - 32px));
   padding: 42px;
+  overflow: auto;
+}
+
+.contact-modal h3 {
+  font-size: clamp(28px, 5vw, 34px);
 }
 
 .contact-modal .modal-close {
@@ -816,14 +830,14 @@ img {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 210px;
-  height: 210px;
+  width: 232px;
+  height: 232px;
   margin: 26px auto 18px;
-  border: 1px dashed #bdbab2;
-  background:
-    linear-gradient(90deg, rgba(83, 105, 123, 0.06) 1px, transparent 1px),
-    linear-gradient(rgba(83, 105, 123, 0.06) 1px, transparent 1px);
-  background-size: 18px 18px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 12px 30px rgba(20, 20, 20, 0.06);
   color: #5f5d57;
 }
 
@@ -847,7 +861,7 @@ img {
 .contact-note {
   margin: 0;
   color: #8b8982;
-  font-size: 11px;
+  font-size: 12px;
   text-align: center;
 }
 
@@ -872,10 +886,6 @@ img {
 
   .process-grid li:nth-child(odd) {
     border-right: 1px solid var(--line);
-  }
-
-  .process-grid li:nth-child(3) {
-    padding-left: 0;
   }
 
   .process-grid li:last-child,
@@ -925,12 +935,17 @@ img {
     padding-right: 22px;
   }
 
+  .process-section {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+
   .service-card {
     min-height: 0;
   }
 
   .service-card + .service-card {
-    padding-left: 0;
+    padding-left: 16px;
     border-left: 0;
   }
 
@@ -960,13 +975,6 @@ img {
     padding: 32px 26px;
   }
 
-  .site-footer {
-    display: block;
-  }
-
-  .site-footer p + p {
-    margin-top: 6px;
-  }
 }
 
 @media (max-width: 560px) {
@@ -1022,6 +1030,16 @@ img {
     padding-right: 16px;
   }
 
+  .process-section {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .contact-band {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
   .template-grid {
     grid-template-columns: 1fr;
     gap: 36px;
@@ -1034,7 +1052,7 @@ img {
   .process-grid li,
   .process-grid li:not(:first-child) {
     min-height: 0;
-    padding: 20px 0;
+    padding: 20px 0 20px 14px;
     border-right: 0;
     border-bottom: 1px solid var(--line);
   }
@@ -1062,8 +1080,8 @@ img {
   }
 
   .qr-slot {
-    width: 180px;
-    height: 180px;
+    width: 200px;
+    height: 200px;
   }
 }
 

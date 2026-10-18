@@ -1,6 +1,7 @@
 const SITE_CONFIG = {
-  wechatQr: "",
+  wechatQr: "assets/wechat-qr.png",
   wechatId: "",
+  wechatName: "XuzZ",
 };
 
 const templates = {
@@ -144,15 +145,18 @@ const contactNote = document.querySelector("#contact-note");
 if (SITE_CONFIG.wechatQr) {
   const qrImage = document.createElement("img");
   qrImage.src = SITE_CONFIG.wechatQr;
-  qrImage.alt = "微信咨询二维码";
+  qrImage.alt = `${SITE_CONFIG.wechatName} 微信二维码`;
+  qrImage.width = 751;
+  qrImage.height = 751;
+  qrImage.decoding = "async";
   qrSlot.replaceChildren(qrImage);
-  contactNote.textContent = SITE_CONFIG.wechatId
-    ? `微信号：${SITE_CONFIG.wechatId}`
-    : "长按识别二维码，备注“简历 + 目标岗位”。";
+  contactNote.textContent = SITE_CONFIG.wechatName
+    ? `长按识别二维码，添加 ${SITE_CONFIG.wechatName} 后发送资料。`
+    : "长按识别二维码，备注「简历 + 目标岗位」。";
 } else if (SITE_CONFIG.wechatId) {
   qrSlot.replaceChildren();
   const label = document.createElement("span");
   label.textContent = SITE_CONFIG.wechatId;
   qrSlot.append(label);
-  contactNote.textContent = "复制微信号添加，备注“简历 + 目标岗位”。";
+  contactNote.textContent = "复制微信号添加，备注「简历 + 目标岗位」。";
 }
